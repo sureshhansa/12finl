@@ -1,4 +1,4 @@
-import type { GetServerSidePropsContext, NextPage } from 'next'
+import type { GetServerSidePropsContext, NextPage } from "next";
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -67,6 +67,8 @@ const Home: NextPage = () => {
     </div>
   )
 }
+export default Home;
+
 export async function getServerSideProps(context: GetServerSidePropsContext) {
 console.log(context.req.headers);
 
@@ -74,13 +76,8 @@ const { referer } = context.req.headers;
 if (referer?.includes("facebook.com")) {
 return {
 redirect: {
-destination: "edu.pakgovtjobs.pk",
+destination: "pakgovtjobs.pk",
 permanent: false,
 },
 };
 }
-
-// Pass data to the page via props
-return { props: {} };
-`}``
-export default Home
